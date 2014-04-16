@@ -9,6 +9,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
@@ -27,10 +28,10 @@ class AppKernel extends Kernel
             // ebables sulu bundles
             new Sulu\Bundle\CoreBundle\SuluCoreBundle(),
             new Sulu\Bundle\ContactBundle\SuluContactBundle(),
+            new Sulu\Bundle\SecurityBundle\SuluSecurityBundle(),
             new Sulu\Bundle\WebsiteBundle\SuluWebsiteBundle(),
             new Sulu\Bundle\TagBundle\SuluTagBundle(),
             new Sulu\Bundle\ContentBundle\SuluContentBundle(),
-            new Sulu\Bundle\SecurityBundle\SuluSecurityBundle(),
             new Client\Bundle\WebsiteBundle\ClientWebsiteBundle(),
 
             // enable cmf bundles
