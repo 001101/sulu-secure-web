@@ -3055,12 +3055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sulu-cmf/SuluWebsiteBundle.git",
-                "reference": "46a96f64107a88f9362b800d3633152371fb8a43"
+                "reference": "0e99bf0dfb978000e035bfb41cba808deef5ecc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sulu-cmf/SuluWebsiteBundle/zipball/46a96f64107a88f9362b800d3633152371fb8a43",
-                "reference": "46a96f64107a88f9362b800d3633152371fb8a43",
+                "url": "https://api.github.com/repos/sulu-cmf/SuluWebsiteBundle/zipball/0e99bf0dfb978000e035bfb41cba808deef5ecc8",
+                "reference": "0e99bf0dfb978000e035bfb41cba808deef5ecc8",
                 "shasum": ""
             },
             "require": {
@@ -3099,7 +3099,7 @@
                 "sulu",
                 "website"
             ],
-            "time": "2014-04-29 17:00:46"
+            "time": "2014-04-30 18:33:33"
         },
         {
             "name": "swiftmailer/swiftmailer",
