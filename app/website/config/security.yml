@@ -17,7 +17,7 @@ security:
         - { path: ^/, roles: ROLE_USER }
 
     firewalls:
-        sulu:
+        website:
             pattern: ^/
             anonymous: ~
             form_login:
@@ -25,4 +25,4 @@ security:
                 check_path: client.login_check
             logout:
                 path: /logout
-                target: /
+                target: /login

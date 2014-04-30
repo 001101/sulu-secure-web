@@ -3,3 +3,5 @@ client.login:
     defaults:   { _controller: ClientWebsiteBundle:Security:login }
 client.login_check:
     path:       /login_check
+client.logout:
+    path:       /logout
