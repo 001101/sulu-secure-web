@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "61f85e0f7bd0827766c1644a8e544756",
+    "hash": "c9341daa9306b772625f8c67da8a9430",
     "packages": [
         {
             "name": "cboden/ratchet",
@@ -2726,57 +2726,6 @@
             "time": "2014-04-30 10:44:49"
         },
         {
-            "name": "sulu/portal-bundle",
-            "version": "dev-develop",
-            "target-dir": "Sulu/Bundle/PortalBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sulu-cmf/SuluPortalBundle.git",
-                "reference": "98e885caec898e9fa508f08a34baead641d4ac31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sulu-cmf/SuluPortalBundle/zipball/98e885caec898e9fa508f08a34baead641d4ac31",
-                "reference": "98e885caec898e9fa508f08a34baead641d4ac31",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "friendsofsymfony/rest-bundle": "1.0.*",
-                "jms/serializer-bundle": "@dev",
-                "php": ">=5.4",
-                "sulu/admin-bundle": "dev-develop",
-                "sulu/sulu": "dev-develop"
-            },
-            "require-dev": {
-                "doctrine/doctrine-bundle": "1.2.*",
-                "phpunit/phpunit": "3.7.*",
-                "symfony/monolog-bundle": "2.3.*",
-                "symfony/symfony": "2.3.*"
-            },
-            "type": "sulu-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Sulu\\Bundle\\PortalBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sulu Community",
-                    "homepage": "https://github.com/massiveart/SuluPortalBundle/contributors"
-                }
-            ],
-            "description": "TODO",
-            "keywords": [
-                "todo"
-            ],
-            "time": "2014-04-22 07:47:26"
-        },
-        {
             "name": "sulu/product-advanced-bundle",
             "version": "dev-develop",
             "target-dir": "Sulu/Bundle/Product/AdvancedBundle",
@@ -4673,7 +4622,6 @@
         "sulu/admin-bundle": 20,
         "sulu/contact-bundle": 20,
         "sulu/security-bundle": 20,
-        "sulu/portal-bundle": 20,
         "sulu/content-bundle": 20,
         "sulu/website-bundle": 20,
         "sulu/tag-bundle": 20,

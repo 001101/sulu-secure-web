@@ -25,7 +25,6 @@
         "sulu/admin-bundle": "dev-develop",
         "sulu/contact-bundle": "dev-develop",
         "sulu/security-bundle": "dev-develop",
-        "sulu/portal-bundle": "dev-develop",
         "sulu/content-bundle": "dev-develop",
         "sulu/website-bundle": "dev-develop",
         "sulu/tag-bundle": "dev-develop",
