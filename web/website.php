@@ -26,7 +26,7 @@ require_once __DIR__.'/../app/website/AppCache.php';
 
 $kernel = new AppKernel(APP_ENV, (APP_ENV == 'dev') ? true : false);
 $kernel->loadClassCache();
-$kernel = new AppCache($kernel);
+//$kernel = new AppCache($kernel);
 Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
