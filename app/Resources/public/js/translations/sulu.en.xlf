@@ -92,7 +92,7 @@
       </trans-unit>
       <trans-unit id="2745c23db7c8055c84ecba422b39e8e6" resname="contact.contacts.title">
         <source>contact.contacts.title</source>
-        <target>Contact</target>
+        <target>Person</target>
       </trans-unit>
       <trans-unit id="bce12aa0a40b4a95a3bfc133a6bf286f" resname="contact.contacts.contactTitle">
         <source>contact.contacts.contactTitle</source>
@@ -172,7 +172,7 @@
       </trans-unit>
       <trans-unit id="9c0bd43954c93c8e2cbfe94ecdd649c7" resname="email.work">
         <source>email.work</source>
-        <target>Business</target>
+        <target>Work</target>
       </trans-unit>
       <trans-unit id="1eddecabfe3e3149071096c39a2069b1" resname="phone.home">
         <source>phone.home</source>
@@ -180,7 +180,7 @@
       </trans-unit>
       <trans-unit id="2ae8f62c2530b4303646d95f70bfa62e" resname="phone.work">
         <source>phone.work</source>
-        <target>Business</target>
+        <target>Work</target>
       </trans-unit>
       <trans-unit id="27b4428805be5d6c32f51fd103b76cef" resname="phone.fax">
         <source>phone.fax</source>
@@ -192,7 +192,7 @@
       </trans-unit>
       <trans-unit id="4b006ce36bf3e4f6bb24fd13e8dc29a9" resname="address.work">
         <source>address.work</source>
-        <target>Business</target>
+        <target>Work</target>
       </trans-unit>
       <trans-unit id="a6287b824eeb3893ce4ef15ee503f47d" resname="country.austria">
         <source>country.austria</source>
@@ -253,6 +253,10 @@
       <trans-unit id="630afebcb7daa7f0a5addd4a3c76fff0" resname="security.roles.none">
         <source>security.roles.none</source>
         <target>Select none</target>
+      </trans-unit>
+      <trans-unit id="630afebcb7daa7f0a5addd4a3c76fff1" resname="security.roles.security-type">
+        <source>security.roles.security-type</source>
+        <target>Type</target>
       </trans-unit>
       <trans-unit id="564c871c3fda868b7f35e81724359618" resname="security.permission.title">
         <source>security.permission.title</source>
@@ -332,11 +336,11 @@
       </trans-unit>
       <trans-unit id="61788b1f08f29f6e5f1cb4076fd81272" resname="navigation.contacts">
         <source>navigation.contacts</source>
-        <target>Contacts</target>
+        <target>CRM</target>
       </trans-unit>
       <trans-unit id="a5483734334073f618ff019ef3a41470" resname="navigation.contacts.people">
         <source>navigation.contacts.people</source>
-        <target>Contacts</target>
+        <target>People</target>
       </trans-unit>
       <trans-unit id="b819087c400da29fa73c69eb259d6fbe" resname="navigation.contacts.companies">
         <source>navigation.contacts.companies</source>
@@ -404,7 +408,7 @@
       </trans-unit>
       <trans-unit id="317132c150958a110ab6c49ea2f99dee" resname="pagination.elements">
         <source>pagination.elements</source>
-        <target>Elements</target>
+        <target>elements</target>
       </trans-unit>
       <trans-unit id="f293f6bd000d7e96b51c24c6e4b22e59" resname="pagination.show">
         <source>pagination.show</source>
@@ -758,8 +762,8 @@
         <source>contact.account.add-supplier</source>
         <target>Create new supplier</target>
       </trans-unit>
-      <trans-unit id="9e2ea0903c58af307e249455965b918b" resname="contact.account.type">
-        <source>contact.account.type</source>
+      <trans-unit id="8f6cabe97b1f83bec94b4e7b78348e0c" resname="contact.accounts.type">
+        <source>contact.accounts.type</source>
         <target>Type</target>
       </trans-unit>
       <trans-unit id="18fe4f5f2d5a25f1a9b5360e0bd18bfa" resname="content.delete.dialog.title">
@@ -878,129 +882,315 @@
         <source>sulu.property.smartcontent</source>
         <target>Smart-content</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b511" resname="sulu.property.block">
+      <trans-unit id="b8e1a770d7d287dd5bdd1e758dbdcb3d" resname="sulu.property.block">
         <source>sulu.property.block</source>
         <target>Block</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b522" resname="sulu.type.editor">
-        <source>type.editor</source>
+      <trans-unit id="3ce9a72d652b2885fd27dded383f9c60" resname="sulu.type.editor">
+        <source>sulu.type.editor</source>
         <target>Editor</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b533" resname="sulu.type.area">
-        <source>type.area</source>
+      <trans-unit id="2e8bb7d315d95bf4768f32dc624f02ac" resname="sulu.type.area">
+        <source>sulu.type.area</source>
         <target>Text</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b544" resname="sulu.type.title_only">
-        <source>type.title_only</source>
+      <trans-unit id="3d44400ee5b215b4b16913d68868140f" resname="sulu.type.title_only">
+        <source>sulu.type.title_only</source>
         <target>Title</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b555" resname="sulu.content.add-type">
+      <trans-unit id="fd7f7507a45f470925dd0e3257b20da2" resname="sulu.content.add-type">
         <source>sulu.content.add-type</source>
         <target>Add Block</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b566" resname="contacts.accounts.manage.categories.title">
+      <trans-unit id="73f08bc1e1576fe835885fccd00abaeb" resname="contacts.accounts.manage.categories.title">
         <source>contacts.accounts.manage.categories.title</source>
         <target>Manage categories</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b577" resname="contacts.accounts.manage.categories">
+      <trans-unit id="b7a4aa666805f63aa7a28f4c18f99ed0" resname="contacts.accounts.manage.categories">
         <source>contacts.accounts.manage.categories</source>
         <target>Manage categories</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b588" resname="contacts.accounts.category.select">
+      <trans-unit id="3113e12e2fbe9b9a8b569a0bb9ba6a44" resname="contacts.accounts.category.select">
         <source>contacts.accounts.category.select</source>
         <target>Choose a Category</target>
       </trans-unit>
-      <trans-unit id="9377b96425b464e812cf979825d3b599" resname="contacts.accounts.category">
+      <trans-unit id="d6dc091748c0ec57fa675a24df5d8656" resname="contacts.accounts.category">
         <source>contacts.accounts.category</source>
         <target>Category</target>
       </trans-unit>
-      <trans-unit id="1001b96425b464e812cf979825d3b599" resname="sulu.overlay.delete-no-items">
+      <trans-unit id="e475ebdeff70002fbd1ac9a8aa1ece1b" resname="sulu.overlay.delete-no-items">
         <source>sulu.overlay.delete-no-items</source>
         <target>No items for deletion selected.</target>
       </trans-unit>
-      <trans-unit id="1010b96425b464e812cf979825d3b599" resname="sulu.overlay.error">
+      <trans-unit id="0a14cd1cbbc4d6c03ecf832a50c3fb6e" resname="sulu.overlay.error">
         <source>sulu.overlay.error</source>
         <target>Error!</target>
       </trans-unit>
-      <trans-unit id="1002b96425b464e812cf979825d3b599" resname="contact.accounts.delete.sub-found">
+      <trans-unit id="b26532550903c431ac3a18bd18fd3974" resname="contact.accounts.delete.sub-found">
         <source>contact.accounts.delete.sub-found</source>
         <target>One or more sub-companies found.</target>
       </trans-unit>
-      <trans-unit id="1003b96425b464e812cf979825d3b599" resname="contact.accounts.delete.sub-found-desc">
+      <trans-unit id="be247a829a9521e04a11ce8fd9805447" resname="contact.accounts.delete.sub-found-desc">
         <source>contact.accounts.delete.sub-found-desc</source>
         <target>A company cannot be deleted as long as it has sub-companies. Please delete the sub-companies or remove the relation.</target>
       </trans-unit>
-      <trans-unit id="1004b96425b464e812cf979825d3b599" resname="contact.accounts.delete.desc">
+      <trans-unit id="cdf96c847495b2ec2bcf1f3b45489fb8" resname="contact.accounts.delete.desc">
         <source>contact.accounts.delete.desc</source>
         <target>Do you really want to delete the selected company? All data is going to be lost.</target>
       </trans-unit>
-      <trans-unit id="1005b96425b464e812cf979825d3b599" resname="public.and-number-more">
+      <trans-unit id="47a985c32e496819ae346f7fb780926b" resname="public.and-number-more">
         <source>public.and-number-more</source>
         <target>and &lt;%= number %&gt; more</target>
       </trans-unit>
-      <trans-unit id="1006b96425b464e812cf979825d3b599" resname="contact.accounts.delete.contacts">
+      <trans-unit id="4f4a5c96a0bfc7e6577f3b16d08c037f" resname="contact.accounts.delete.contacts">
         <source>contact.accounts.delete.contacts</source>
         <target>Delete all &lt;%= number %&gt; related contacts.</target>
       </trans-unit>
-      <trans-unit id="1007b96425b464e812cf979825d3b599" resname="contact.accounts.delete.contacts-found">
+      <trans-unit id="c932351362aaec41a9a4d45c75c7d0dd" resname="contact.accounts.delete.contacts-found">
         <source>contact.accounts.delete.contacts-found</source>
         <target>Related contacts have been found.</target>
       </trans-unit>
-      <trans-unit id="1008b96425b464e812cf979825d3b599" resname="contact.accounts.delete.contacts-question">
+      <trans-unit id="1f589540dc08f9d94163df6923eaba80" resname="contact.accounts.delete.contacts-question">
         <source>contact.accounts.delete.contacts-question</source>
         <target>Would you like to delete them together with the selected company?</target>
       </trans-unit>
-      <trans-unit id="1009b96425b464e812cf979825d3b599" resname="contact.accounts.delete.contacts-checkbox">
+      <trans-unit id="4ecec83f0e5e3fec4128c248b2ce66da" resname="contact.accounts.delete.contacts-checkbox">
         <source>contact.accounts.delete.contacts-checkbox</source>
         <target>Delete all &lt;%= number %&gt; related contacts.</target>
       </trans-unit>
-      <trans-unit id="2000b96425b464e812cf979825d3b599" resname="contact.accounts.number">
+      <trans-unit id="95f5d305ecefcbf58dcdd387ba6bce6c" resname="navigation.media">
+        <source>navigation.media</source>
+        <target>Assets</target>
+      </trans-unit>
+      <trans-unit id="3fd1f800bd2ecfb6af0abf749b716788" resname="navigation.media.collections">
+        <source>navigation.media.collections</source>
+        <target>Collections</target>
+      </trans-unit>
+      <trans-unit id="2ed2e1bec2480b32fd6f8022a857c080" resname="media.collections.title">
+        <source>media.collections.title</source>
+        <target>Collections</target>
+      </trans-unit>
+      <trans-unit id="03d0a7c832c6c581e97fcf01aea8a30b" resname="public.open-all">
+        <source>public.open-all</source>
+        <target>Open all</target>
+      </trans-unit>
+      <trans-unit id="51b5233b5b7bbe1e1c7a6fbde4035d62" resname="public.close-all">
+        <source>public.close-all</source>
+        <target>Close all</target>
+      </trans-unit>
+      <trans-unit id="08f6ef9c711e42e2a336883a2f9e528e" resname="pagination.show-all">
+        <source>pagination.show-all</source>
+        <target>Show all</target>
+      </trans-unit>
+      <trans-unit id="6c01dbc259d279576ab8d385c110e66c" resname="public.elements">
+        <source>public.elements</source>
+        <target>elements</target>
+      </trans-unit>
+      <trans-unit id="ed961112240c7d99faeacb57a28aa6f6" resname="content-navigation.media.files">
+        <source>content-navigation.media.files</source>
+        <target>Files</target>
+      </trans-unit>
+      <trans-unit id="5ce49fa74807f040dd27e417751cb9e1" resname="sulu.upload.dropzone-title">
+        <source>sulu.upload.dropzone-title</source>
+        <target>Drag and drop assets here to upload</target>
+      </trans-unit>
+      <trans-unit id="ab1a58cd4f177db063487ed70698126a" resname="sulu.upload.dropzone-desc">
+        <source>sulu.upload.dropzone-desc</source>
+        <target>Or click to add</target>
+      </trans-unit>
+      <trans-unit id="2e3b70e82001f5bfc22e941e65376ee6" resname="sulu.list-toolbar.small-thumbnails">
+        <source>sulu.list-toolbar.small-thumbnails</source>
+        <target>Small thumbnails</target>
+      </trans-unit>
+      <trans-unit id="8c04c5d1dbf406f6222a2c4338e26663" resname="sulu.list-toolbar.big-thumbnails">
+        <source>sulu.list-toolbar.big-thumbnails</source>
+        <target>Large thumbnails</target>
+      </trans-unit>
+      <trans-unit id="aa005e19189f861dc79bc978a5caa663" resname="sulu.list-toolbar.table">
+        <source>sulu.list-toolbar.table</source>
+        <target>Table</target>
+      </trans-unit>
+      <trans-unit id="2193fee100102d3c2f87ec9828dc3bab" resname="contact.accounts.number">
         <source>contact.accounts.number</source>
         <target>Number</target>
       </trans-unit>
-      <trans-unit id="2004b96425b464e812cf979825d3b599" resname="contact.accounts.register-number">
-        <source>contact.accounts.register-number</source>
+      <trans-unit id="792da838c3130e338d9c5cb5e277469e" resname="contact.accounts.registerNumber">
+        <source>contact.accounts.registerNumber</source>
         <target>Register Number</target>
       </trans-unit>
-      <trans-unit id="2001b96425b464e812cf979825d3b599" resname="contact.accounts.uid">
+      <trans-unit id="5d5f771c4109de372c712d2759f8a205" resname="contact.accounts.uid">
         <source>contact.accounts.uid</source>
         <target>UID</target>
       </trans-unit>
-      <trans-unit id="2002b96425b464e812cf979825d3b599" resname="contact.accounts.division">
+      <trans-unit id="12e8ff6fd83093df313049330f7c35cc" resname="contact.accounts.division">
         <source>contact.accounts.division</source>
         <target>Division</target>
       </trans-unit>
-      <trans-unit id="2003b96425b464e812cf979825d3b599" resname="public.disabled">
+      <trans-unit id="b7c8c053e39fcd8e8a627e91dd6b650e" resname="public.disabled">
         <source>public.disabled</source>
         <target>Disabled</target>
       </trans-unit>
-      <trans-unit id="2005b96425b464e812cf979825d3b599" resname="navigation.financials">
+      <trans-unit id="750e61b7718d049c72a2ec09d96df2ad" resname="navigation.financials">
         <source>navigation.financials</source>
         <target>Financial Infos</target>
       </trans-unit>
-      <trans-unit id="2006b96425b464e812cf979825d3b599" resname="contact.accounts.bank-name">
-        <source>contact.accounts.bank-name</source>
+      <trans-unit id="bf746deceecc14117cee98a6dee9621e" resname="contact.accounts.bankName">
+        <source>contact.accounts.bankName</source>
         <target>Bank name</target>
       </trans-unit>
-      <trans-unit id="2007b96425b464e812cf979825d3b599" resname="contact.accounts.bank-accounts">
+      <trans-unit id="1172f8b447c7e3c041f39dd32ccc9f1a" resname="contact.accounts.bank-accounts">
         <source>contact.accounts.bank-accounts</source>
         <target>Bank Accounts</target>
       </trans-unit>
-      <trans-unit id="2008b96425b464e812cf979825d3b599" resname="contact.accounts.add-bank-account">
+      <trans-unit id="8d73384b25d38a5f32ab5169afd75e60" resname="contact.accounts.add-bank-account">
         <source>contact.accounts.add-bank-account</source>
         <target>Add new bank account</target>
       </trans-unit>
-      <trans-unit id="2009b96425b464e812cf979825d3b599" resname="public.public">
+      <trans-unit id="7b9e03b4c0a92d2120e3301c3d7a91e9" resname="public.public">
         <source>public.public</source>
         <target>Public</target>
       </trans-unit>
-      <trans-unit id="3010b96425b464e812cf979825d3b599" resname="public.iban">
+      <trans-unit id="1f8faefde5f77a4f3139b079a5b51d29" resname="public.iban">
         <source>public.iban</source>
         <target>IBAN</target>
       </trans-unit>
-      <trans-unit id="3011b96425b464e812cf979825d3b599" resname="public.bic">
+      <trans-unit id="486a915651120d7595c6d99a9c362f0c" resname="public.bic">
         <source>public.bic</source>
         <target>BIC</target>
+      </trans-unit>
+      <trans-unit id="b50e54392bb7da978e9a2cf49c4fa8fc" resname="contact.accounts.manage.categories.title">
+        <source>contact.accounts.manage.categories.title</source>
+        <target>Manage categories</target>
+      </trans-unit>
+      <trans-unit id="742e8b76d3297cc60d49b6da002cadf6" resname="contact.accounts.manage.categories">
+        <source>contact.accounts.manage.categories</source>
+        <target>Manage categories</target>
+      </trans-unit>
+      <trans-unit id="35ac1a3024f2eb490134c3c0b2c2c540" resname="contact.accounts.category.select">
+        <source>contact.accounts.category.select</source>
+        <target>Choose a category</target>
+      </trans-unit>
+      <trans-unit id="a48f27ebd46344b265095d9c2f6e7a27" resname="contact.accounts.category">
+        <source>contact.accounts.category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="c9276aa93501d9bd79d95617a0687c61" resname="public.please-choose">
+        <source>public.please-choose</source>
+        <target>Please choose</target>
+      </trans-unit>
+      <trans-unit id="79d68f4ec8392a1f07b99dddc6e48a22" resname="contacts.edit-address">
+        <source>contacts.edit-address</source>
+        <target>Edit Address</target>
+      </trans-unit>
+      <trans-unit id="57000f1907b8c8548d35699790a3552d" resname="contact.accounts.bonusSettlement">
+        <source>contact.accounts.bonusSettlement</source>
+        <target>Bonus-settlement</target>
+      </trans-unit>
+      <trans-unit id="116dd2324c3e200fe70e6672107c0423" resname="contact.accounts.bonusConditions">
+        <source>contact.accounts.bonusConditions</source>
+        <target>Bonus-conditions</target>
+      </trans-unit>
+      <trans-unit id="4ced7e7729c9114bf64ce5a936d6b1f2" resname="contact.accounts.correspondence">
+        <source>contact.accounts.correspondence</source>
+        <target>Correspondence via</target>
+      </trans-unit>
+      <trans-unit id="ebc1d1f4df64e6f9b1da751d60e4807b" resname="poolalpin.supplier-internal">
+        <source>poolalpin.supplier-internal</source>
+        <target>Internal</target>
+      </trans-unit>
+      <trans-unit id="2f58801f9b542aed46820bf42ee5cd53" resname="media.media.description">
+        <source>media.media.description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="3c8f1c7c02abd468cc0794e987e2b2cf" resname="media.media.size">
+        <source>media.media.size</source>
+        <target>Filesize</target>
+      </trans-unit>
+      <trans-unit id="6f5e8f5b65fd4e7ae7ec509e742cc85f" resname="media.media.thumbnails">
+        <source>media.media.thumbnails</source>
+        <target>Thumbnail</target>
+      </trans-unit>
+      <trans-unit id="6f2c89027621ffebd6cfbe33bdf16455" resname="sulu.media.new-collection">
+        <source>sulu.media.new-collection</source>
+        <target>New collection</target>
+      </trans-unit>
+      <trans-unit id="f22404eb2d33ceaf238eefc31a71d124" resname="contact.contacts.salutation">
+        <source>contact.contacts.salutation</source>
+        <target>Salutation</target>
+      </trans-unit>
+      <trans-unit id="16cc76aeac068c2027efe58d0ae9d008" resname="contact.contacts.formOfAddress">
+        <source>contact.contacts.formOfAddress</source>
+        <target>Form of address</target>
+      </trans-unit>
+      <trans-unit id="f47ed841c01ac8a9869950c758174209" resname="contact.contacts.formOfAddress.select">
+        <source>contact.contacts.formOfAddress.select</source>
+        <target>Choose form of address</target>
+      </trans-unit>
+      <trans-unit id="4db269ac7faa0b76bd7288c86efb795b" resname="contact.contacts.formOfAddress.male">
+        <source>contact.contacts.formOfAddress.male</source>
+        <target>Mr.</target>
+      </trans-unit>
+      <trans-unit id="cb106dadb34469a52f67b087c579f37a" resname="contact.contacts.formOfAddress.female">
+        <source>contact.contacts.formOfAddress.female</source>
+        <target>Mrs.</target>
+      </trans-unit>
+      <trans-unit id="71491ef900232b8755bf0842292e1ff4" resname="sulu.media.add-collection">
+        <source>sulu.media.add-collection</source>
+        <target>Add new collection</target>
+      </trans-unit>
+      <trans-unit id="68f3cef76066b2a5ee8da26341eb373b" resname="public.color">
+        <source>public.color</source>
+        <target>Color</target>
+      </trans-unit>
+      <trans-unit id="0501e263af3ba0f52ef7a4d3c0298d50" resname="contact.contacts.details">
+        <source>contact.contacts.details</source>
+        <target>Contact details</target>
+      </trans-unit>
+      <trans-unit id="9050263af3ba0f52ef7a4d3c0298d50" resname="url.work">
+        <source>url.work</source>
+        <target>Work</target>
+      </trans-unit>
+      <trans-unit id="9051263af3ba0f52ef7a4d3c0298d50" resname="fax.work">
+        <source>fax.work</source>
+        <target>Work</target>
+      </trans-unit>
+      <trans-unit id="9051363af3ba0f52ef7a4d3c0298d50" resname="public.internal">
+        <source>public.internal</source>
+        <target>Internal</target>
+      </trans-unit>
+      <trans-unit id="9051563af3ba0f52ef7a4d3c0298d50" resname="address.delivery">
+        <source>address.delivery</source>
+        <target>Delivery address</target>
+      </trans-unit>
+      <trans-unit id="9051663af3ba0f52ef7a4d3c0298d50" resname="address.invoice">
+        <source>address.invoice</source>
+        <target>Invoice address</target>
+      </trans-unit>
+      <trans-unit id="9052063af3ba0f52ef7a4d3c0298d50" resname="phone.mobile">
+        <source>phone.mobile</source>
+        <target>Mobile</target>
+      </trans-unit>
+      <!-- POOL-ALPIN_SPEZIFISCH -->
+      <trans-unit id="9051763af3ba0f52ef7a4d3c0298d50" resname="contact.contacts.hobbies">
+        <source>contact.contacts.hobbies</source>
+        <target>Hobbies</target>
+      </trans-unit>
+      <trans-unit id="9051863af3ba0f52ef7a4d3c0298d50" resname="contact.contacts.partner">
+        <source>contact.contacts.partner</source>
+        <target>Partner</target>
+      </trans-unit>
+      <trans-unit id="9051963af3ba0f52ef7a4d3c0298d50" resname="contact.contacts.aviso">
+        <source>contact.contacts.aviso</source>
+        <target>Aviso to</target>
+      </trans-unit>
+      <!-- end -->
+      <trans-unit id="9052263af3ba0f52ef7a4d3c0298d50" resname="public.add-entry">
+        <source>public.add-entry</source>
+        <target>Add new Entry</target>
+      </trans-unit>
+      <trans-unit id="9052264af3ba0f52ef7a4d3c0298d50" resname="public.edit-entries">
+        <source>public.edit-entries</source>
+        <target>Edit entries</target>
       </trans-unit>
     </body>
   </file>
