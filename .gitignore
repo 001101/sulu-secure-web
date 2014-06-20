@@ -1,11 +1,13 @@
 /web/bundles/
 /web/js
+/web/css
 /app/bootstrap.php.cache
 /app/admin/cache/*
 /app/Resources/config/parameters.yml
 /app/admin/logs/*
 /app/website/cache/*
 /app/website/logs/*
+/uploads/sulumedia/*
 /build/
 /vendor/
 /bin/
