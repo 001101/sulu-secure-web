@@ -27,10 +27,13 @@ require_once __DIR__ . '/../app/website/AppKernel.php';
 $kernel = new AppKernel(APP_ENV, (APP_ENV == 'dev') ? true : false);
 $kernel->loadClassCache();
 
+/*
+// AppCache is currently disable for secured sites
 if (APP_ENV != 'dev') {
     require_once __DIR__ . '/../app/website/AppCache.php';
     $kernel = new AppCache($kernel);
 }
+*/
 
 Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
