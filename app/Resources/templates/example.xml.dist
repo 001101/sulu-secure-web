@@ -11,13 +11,12 @@
     <cacheLifetime>2400</cacheLifetime>
 
     <properties>
-
         <section name="simple">
             <meta>
                 <title lang="de">Einfache Content Typen</title>
                 <title lang="en">Simple Contenttypes</title>
             </meta>
-            
+
             <properties>
                 <property name="title" type="text_line" mandatory="true">
                     <meta>
@@ -112,8 +111,21 @@
 
                 <property name="tags" type="tag_list">
                     <meta>
-                        <title lang="de">Tag auswahl</title>
+                        <title lang="de">Tag Auswahl</title>
                         <title lang="en">Tag selection</title>
+                    </meta>
+                </property>
+                <property name="categories" type="category_list">
+                    <meta>
+                        <title lang="de">Kategorien</title>
+                        <title lang="en">Categories</title>
+                    </meta>
+                </property>
+
+                <property name="links" type="internal_links">
+                    <meta>
+                        <title lang="de">Interne Links</title>
+                        <title lang="en">Internal links</title>
                     </meta>
                 </property>
 
@@ -121,6 +133,13 @@
                     <meta>
                         <title lang="de">Smart-Content auswahl</title>
                         <title lang="en">Smart-Content selection</title>
+                    </meta>
+                </property>
+
+                <property name="images" type="media_selection">
+                    <meta>
+                        <title lang="de">Bilder</title>
+                        <title lang="en">Images</title>
                     </meta>
                 </property>
 

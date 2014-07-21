@@ -73,9 +73,11 @@ rm -rf app/admin/cache/*
 rm -rf app/admin/logs/*
 rm -rf app/website/cache/*
 rm -rf app/website/logs/*
+rm -rf uploads/media/*
+rm -rf web/uploads/media/*
 APACHEUSER=`ps aux | grep -E '[a]pache|[h]ttpd' | grep -v root | head -1 | cut -d\  -f1`
-sudo chmod +a "$APACHEUSER allow delete,write,append,file_inherit,directory_inherit" app/admin/cache app/admin/logs app/website/cache app/website/logs
-sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/admin/cache app/admin/logs app/website/cache app/website/logs
+sudo chmod +a "$APACHEUSER allow delete,write,append,file_inherit,directory_inherit" app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
+sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
 ```
 
 ##### Ubuntu
@@ -84,8 +86,10 @@ rm -rf app/admin/cache/*
 rm -rf app/admin/logs/*
 rm -rf app/website/cache/*
 rm -rf app/website/logs/*
-sudo setfacl -R -m u:www-data:rwx -m u:`whoami`:rwx app/admin/cache app/admin/logs app/website/cache app/website/logs
-sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx app/admin/cache app/admin/logs app/website/cache app/website/logs
+rm -rf uploads/media/*
+rm -rf web/uploads/media/*
+sudo setfacl -R -m u:www-data:rwx -m u:`whoami`:rwx app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
+sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
 ```
 
 #### Create database and schema
@@ -108,6 +112,39 @@ Download the jar file into a Folder of your choice.
 wget http://archive.apache.org/dist/jackrabbit/2.6.3/jackrabbit-standalone-2.6.3.jar
 java -jar jackrabbit-standalone-2.6.3.jar
 ```
+
+#### Optional
+
+##### Imagick - for better Image handling
+
+###### Mac OSX
+```
+brew install imagemagick
+brew install php55-imagick
+```
+add `extension=/path/to/Imagick.so` to `php.ini`
+
+###### Ubuntu
+```
+sudo apt-get install imagemagick
+sudo apt-get install php5-imagick
+```
+
+add `extension=/path/to/Imagick.so` to `php.ini`
+
+##### GhostScript - PDF previews
+
+###### Mac OSX
+```
+brew install ghostscript
+```
+configurate the path to `ghostscript` in the media bundle
+
+###### Ubuntu
+```
+sudo apt-get install ghostscript
+```
+configurate the path to `ghostscript` in the media bundle
 
 #### Create required configuration files
 Before you go on with the initialization of the content repository, you have to make sure that all required configuration files exist.

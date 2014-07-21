@@ -4,3 +4,6 @@ liip_theme:
 
 client:
     resource: "@ClientWebsiteBundle/Resources/config/routing.yml"
+
+sulu_media:
+    resource: "@SuluMediaBundle/Resources/config/routing_website.yml"
