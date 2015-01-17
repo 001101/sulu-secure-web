@@ -30,8 +30,11 @@ Use the following template for your vhost-configuration
 </VirtualHost>
 ```
 
-Of course you also have to make sure that your webserver user has permission to access your installation folder.
-Don't forget to include `sulu.lo` in your hosts-file, if you want to use Sulu on a local machine.
+An extended example for Apache and Nginx can be found [here](https://github.com/sulu-cmf/docs/blob/master/developer-documentation/000-foundation/vhost.md).
+
+Of course you also have to make sure that your webserver user has permission
+to access your installation folder.  Don't forget to include `sulu.lo` in your
+hosts-file, if you want to use Sulu on a local machine.
 
 
 ## Installation
@@ -49,15 +52,31 @@ cd sulu-standard
 git checkout develop
 ```
 
-##### Setup PHPCR Session
-Copy the one of the files app/Resources/config/{phpcr_doctrine_dbal.yml.dist} or {phpcr_jackrabbit.yml.dist} to app/Resources/config/phpcr.yml. The config is based on [symfony-cmf sandbox](https://github.com/symfony-cmf/cmf-sandbox). Adjustments to the file contents are optionally.
+##### Webspaces
+Webspaces are configured in the `app/Resources/webspaces`-folder. Copying the existing example should be enough for a local installation:
 ```
-cp app/Resources/config/phpcr_jackrabbit.yml.dist app/Resources/config/phpcr.yml
+cp app/Resources/webspaces/sulu.io.xml.dist app/Resources/webspaces/sulu.io.xml
 ```
-or
+On an online installation you have to adjust the URLs in this file.
+
+##### Templates
+Templates are configured in the `app/Resources/pages`-folder. Copying the existing default template should be enough for a simple page containing a title, a link and a texteditor:
+
 ```
-cp app/Resources/config/phpcr_doctrine_dbal.yml.dist app/Resources/config/phpcr.yml
+cp app/Resources/pages/default.xml.dist app/Resources/pages/default.xml
+cp app/Resources/pages/overview.xml.dist app/Resources/pages/overview.xml
+cp app/Resources/pages/complex.xml.dist app/Resources/pages/complex.xml
 ```
+You can add more templates by simply adding more files in this folder. Use the `default.xml.dist`-file as an example.
+
+#### Snippets
+Snippets are configured in the `app/Resources/snippets`-folder. Copy the existing default snippet-types.
+
+```
+cp app/Resources/snippets/default.xml.dist app/Resources/snippets/default.xml
+```
+
+You can add more snippet-types by simply adding more files in this folder. Use the `default.xml.dist`-file as an example.
 
 #### Install all the dependencies with composer
 
@@ -65,46 +84,50 @@ cp app/Resources/config/phpcr_doctrine_dbal.yml.dist app/Resources/config/phpcr.
 composer install
 ```
 
+Composer will ask for some parameters. The default values are good enough to get a running setup.
+
 #### Clear the caches and set the appropriate permissions
 
 ##### Mac OSX
 ```
-rm -rf app/admin/cache/*
-rm -rf app/admin/logs/*
-rm -rf app/website/cache/*
-rm -rf app/website/logs/*
-rm -rf uploads/media/*
-rm -rf web/uploads/media/*
+rm -rf app/cache/*
+rm -rf app/logs/*
+mkdir app/data
+mkdir uploads/media
+mkdir web/uploads/media
 APACHEUSER=`ps aux | grep -E '[a]pache|[h]ttpd' | grep -v root | head -1 | cut -d\  -f1`
-sudo chmod +a "$APACHEUSER allow delete,write,append,file_inherit,directory_inherit" app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
-sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
+sudo chmod +a "$APACHEUSER allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs uploads/media web/uploads/media app/data
+sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs uploads/media web/uploads/media app/data
 ```
 
 ##### Ubuntu
 ```
-rm -rf app/admin/cache/*
-rm -rf app/admin/logs/*
-rm -rf app/website/cache/*
-rm -rf app/website/logs/*
-rm -rf uploads/media/*
-rm -rf web/uploads/media/*
-sudo setfacl -R -m u:www-data:rwx -m u:`whoami`:rwx app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
-sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx app/admin/cache app/admin/logs app/website/cache app/website/logs uploads/media web/uploads/media
+rm -rf app/cache/*
+rm -rf app/logs/*
+mkdir app/data
+mkdir uploads && mkdir uploads/media/
+mkdir web/uploads && mkdir web/uploads/media/*
+sudo setfacl -R -m u:www-data:rwx -m u:`whoami`:rwx app/cache app/logs uploads/media web/uploads/media app/data
+sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx app/cache app/logs uploads/media web/uploads/media app/data
 ```
 
-#### Create database and schema
-```
-app/console doctrine:database:create
-app/console doctrine:schema:create
-```
+#### Build Sulu
 
-#### Load database default values
-```
-app/console doctrine:fixtures:load
-```
-Answer the upcoming question with `Y`, to purge the entire database.
+The following command will intiaialize the database, load the fixtures and do
+other things required to intiialize your Sulu CMF installation:
 
-#### Download and install Jackrabbit
+Be sure that you installed jackrabbit or doctrine-dbal (next section of instructions)
+
+````
+app/console sulu:build dev
+````
+
+#### Optional
+
+##### Download and install Jackrabbit
+
+Use Apache Jackrabbit as a content repository (as an alternative to
+doctrine-dbal (i.e. storing the data in a relational database).
 
 Download the jar file into a Folder of your choice.
 
@@ -112,9 +135,6 @@ Download the jar file into a Folder of your choice.
 wget http://archive.apache.org/dist/jackrabbit/2.6.3/jackrabbit-standalone-2.6.3.jar
 java -jar jackrabbit-standalone-2.6.3.jar
 ```
-
-#### Optional
-
 ##### Imagick - for better Image handling
 
 ###### Mac OSX
@@ -138,46 +158,24 @@ add `extension=/path/to/Imagick.so` to `php.ini`
 ```
 brew install ghostscript
 ```
-configurate the path to `ghostscript` in the media bundle
+configurate the path to `ghostscript` in app/config/config.yml under `sulu_media.ghost_script.path`
 
 ###### Ubuntu
 ```
 sudo apt-get install ghostscript
 ```
-configurate the path to `ghostscript` in the media bundle
+configurate the path to `ghostscript` in app/config/config.yml under `sulu_media.ghost_script.path`
 
 #### Create required configuration files
 Before you go on with the initialization of the content repository, you have to make sure that all required configuration files exist.
 
-##### Webspaces
-Webspaces are configured in the `app/Resources/webspaces`-folder. Copying the existing example should be enough for a local installation:
-```
-cp app/Resources/webspaces/sulu.io.xml.dist app/Resources/webspaces/sulu.io.xml
-```
-On an online installation you have to adjust the URLs in this file.
+##### Widgets
 
-##### Templates
-Templates are configured in the `app/Resources/templates`-folder. Copying the existing default template should be enough for a simple page containing a title, a link and a texteditor:
+Widgets are small UI-components which are mainly seen in the sidebar. In the configuration file it can be specified which widgets are contained in which sidebar. To use the default configuration just run the follwing command:
 
 ```
-cp app/Resources/templates/default.xml.dist app/Resources/templates/default.xml
-cp app/Resources/templates/overview.xml.dist app/Resources/templates/overview.xml
-cp app/Resources/templates/complex.xml.dist app/Resources/templates/complex.xml
+cp app/config/widgets.yml.dist app/config/widgets.yml
 ```
-You can add more templates by simply adding more files in this folder. Use the `default.xml.dist`-file as an example.
-
-#### Init Content Repository
-
-```
-app/console sulu:phpcr:init
-```
-
-#### Init Webspaces
-
-```
-app/console sulu:webspaces:init
-```
-
 
 #### Insert a new user
 ```

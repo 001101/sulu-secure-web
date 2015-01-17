@@ -1,7 +1,4 @@
-client.login:
-    path:       /login
-    defaults:   { _controller: ClientWebsiteBundle:Security:login }
-client.login_check:
-    path:       /login_check
-client.logout:
-    path:       /logout
+website_search:
+    pattern: /search
+    defaults:
+        _controller: "ClientWebsiteBundle:Search:query"

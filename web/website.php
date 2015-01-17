@@ -22,16 +22,16 @@ $loader->unregister();
 $apcLoader->register(true);
 */
 
-require_once __DIR__ . '/../app/website/AppKernel.php';
+require_once __DIR__ . '/../app/WebsiteKernel.php';
 
-$kernel = new AppKernel(APP_ENV, (APP_ENV == 'dev') ? true : false);
+$kernel = new WebsiteKernel(APP_ENV, (APP_ENV == 'dev') ? true : false);
 $kernel->loadClassCache();
 
 /*
 // AppCache is currently disable for secured sites
 if (APP_ENV != 'dev') {
-    require_once __DIR__ . '/../app/website/AppCache.php';
-    $kernel = new AppCache($kernel);
+    require_once __DIR__ . '/../app/WebsiteCache.php';
+    $kernel = new WebsiteCache($kernel);
 }
 */
 

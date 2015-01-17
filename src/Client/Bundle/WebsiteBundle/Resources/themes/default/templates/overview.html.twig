@@ -16,24 +16,44 @@
             </div>
         </div>
 
-
         <div class="row">
-
             <div class="col-lg-12">
                 <h2>Smart-Content</h2>
             </div>
 
+            <ul class="pagination">
+                {% set page = view.smartcontent.page %}
+
+                {% if page-1 >= 1 %}
+                    <li><a href="{{ content_path(content.url) }}?p={{ page-1 }}">&laquo;</a></li>
+                {% endif %}
+                {% if view.smartcontent.hasNextPage %}
+                    <li><a href="{{ content_path(content.url) }}?p={{ page+1 }}">&raquo;</a></li>
+                {% endif %}
+            </ul>
+
             <div property="smartcontent">
-                {% for smartcontent in content.smartcontent.data %}
+                {% for page in content.smartcontent %}
                     <div class="col-lg-4">
-                        <h2><a href="{{ content_path(smartcontent) }}">{{ smartcontent.title }}</a></h2>
+                        <h2>
+                            <a href="{{ content_path(page.url) }}">{{ page.title }}</a>
+                        </h2>
+                        <p>
+                            <i>{{ page.ext_title }}</i> | <i>{{ page.ext_tags|join(', ') }}</i>
+                        </p>
+                        {% if page.ext_images|length > 0 %}
+                            <img src="{{ page.ext_images[0].thumbnails['50x50'] }}" alt="{{ page.ext_images[0].title }}"/>
+                        {% endif %}
                         {% autoescape false %}
-                        {{ smartcontent.article }}
+                        {% if page.article != '' %}
+                            {{ page.article }}
+                        {% else %}
+                            <p>No Article found</p>
+                        {% endif %}
                         {% endautoescape %}
                     </div>
                 {% endfor %}
             </div>
         </div>
-
     </div>
 {% endblock %}

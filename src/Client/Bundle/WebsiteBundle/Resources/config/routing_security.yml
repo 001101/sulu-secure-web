@@ -1,0 +1,10 @@
+website_login:
+    path:       /login
+    defaults:
+        _controller: ClientWebsiteBundle:Security:login
+
+website_login_check:
+    path:       /login_check
+
+website_logout:
+    path:       /logout
