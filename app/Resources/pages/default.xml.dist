@@ -15,23 +15,30 @@
     </meta>
 
     <properties>
-        <property name="title" type="text_line" mandatory="true">
-            <meta>
-                <title lang="de">Titel</title>
-                <title lang="en">Title</title>
-            </meta>
+        <section name="highlight">
+            <properties>
+                <property name="title" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="de">Titel</title>
+                        <title lang="en">Title</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
 
-            <tag name="sulu.rlp.part"/>
-        </property>
+                    <tag name="sulu.rlp.part"/>
+                </property>
 
-        <property name="url" type="resource_locator" mandatory="true">
-            <meta>
-                <title lang="de">Adresse</title>
-                <title lang="en">Resourcelocator</title>
-            </meta>
+                <property name="url" type="resource_locator" mandatory="true">
+                    <meta>
+                        <title lang="de">Adresse</title>
+                        <title lang="en">Resourcelocator</title>
+                    </meta>
 
-            <tag name="sulu.rlp"/>
-        </property>
+                    <tag name="sulu.rlp"/>
+                </property>
+            </properties>
+        </section>
 
         <property name="links" type="internal_links">
             <meta>
@@ -58,17 +65,19 @@
             </meta>
             <properties>
                 <property name="article" type="text_editor">
-                    <tag name="sulu.search.field" role="description"/>
                     <meta>
                         <title lang="de">Artikel</title>
                         <title lang="en">Article</title>
                     </meta>
 
                     <params>
-                        <param name="godMode" value="true"/>
-                        <param name="links" value="true"/>
-                        <param name="tables" value="true"/>
-                        <param name="pasteFromWord" value="true"/>
+                        <param name="link" value="true"/>
+                        <param name="table" value="true"/>
+                        <param name="height" value="100"/>
+                        <param name="max_height" value="500"/>
+                        <param name="paste_from_word" value="true"/>
+                        <param name="extra_allowed_content"
+                               value="img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]"/>
                     </params>
                 </property>
             </properties>

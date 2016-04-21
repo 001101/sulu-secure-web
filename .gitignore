@@ -5,6 +5,9 @@
 /app/config/parameters.yml
 /app/config/phpcr.yml
 /app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/app/phpunit.xml
 /bin/
 /build/
 /composer.phar
@@ -20,13 +23,13 @@
 # IDEs
 .idea/*
 *.iml
+*~
 
 # System files
 .DS_Store
 
-
 # webspaces
-/app/Resources/webspaces
+/app/Resources/webspaces/*
 !/app/Resources/webspaces/*.dist
 
 # pages
@@ -39,3 +42,6 @@
 
 # old structure files
 /app/Resources/templates/*
+
+# Behat local file
+behat.yml

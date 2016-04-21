@@ -11,19 +11,21 @@
     </security>
 
     <localizations>
-        <localization language="en" shadow="auto">
-            <localization language="en" country="us" shadow="auto"/>
-        </localization>
-        <localization language="de">
-            <localization language="de" country="at"/>
-        </localization>
+        <localization language="en" default="true"/>
+        <localization language="de"/>
     </localizations>
 
     <theme>
         <key>default</key>
-        <excluded>
-            <template>overview</template>
-        </excluded>
+        <default-templates>
+            <default-template type="page">default</default-template>
+            <default-template type="homepage">overview</default-template>
+        </default-templates>
+
+        <error-templates>
+            <error-template default="true">ClientWebsiteBundle:views:error.html.twig</error-template>
+            <error-template code="404">ClientWebsiteBundle:views:error404.html.twig</error-template>
+        </error-templates>
     </theme>
 
     <navigation>
@@ -32,12 +34,6 @@
                 <meta>
                     <title lang="de">Hauptnavigation</title>
                     <title lang="en">Mainnavigation</title>
-                </meta>
-            </context>
-            <context key="footer">
-                <meta>
-                    <title lang="de">Footernavigation</title>
-                    <title lang="en">Footernavigation</title>
                 </meta>
             </context>
         </contexts>
@@ -51,30 +47,23 @@
                 <strategy>tree</strategy>
             </resource-locator>
 
-            <localizations>
-                <localization language="en" default="true"/>
-                <localization language="de"/>
-            </localizations>
-
             <environments>
                 <environment type="prod">
                     <urls>
-                        <url>secure.sulu.lo/{localization}</url>
+                        <url>{host}/{localization}</url>
                     </urls>
                 </environment>
                 <environment type="stage">
                     <urls>
-                        <url>secure.sulu.lo/{localization}</url>
+                        <url>{host}/{localization}</url>
                     </urls>
                 </environment>
                 <environment type="dev">
                     <urls>
-                        <url>secure.sulu.lo/{localization}</url>
-                        <url language="en">localhost</url>
+                        <url>{host}/{localization}</url>
                     </urls>
                 </environment>
             </environments>
         </portal>
     </portals>
 </webspace>
-

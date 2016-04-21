@@ -1,12 +1,20 @@
 <?php
 
+/*
+ * This file is part of Sulu.
+ *
+ * (c) MASSIVE ART WebServices GmbH
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Client\Bundle\WebsiteBundle\Controller;
 
 use Massive\Bundle\SearchBundle\Search\SearchManagerInterface;
 use Sulu\Bundle\WebsiteBundle\Controller\WebsiteController;
 use Sulu\Component\Rest\RequestParametersTrait;
 use Sulu\Component\Webspace\Analyzer\RequestAnalyzerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class SearchController extends WebsiteController
@@ -23,19 +31,45 @@ class SearchController extends WebsiteController
         /** @var RequestAnalyzerInterface $requestAnalyzer */
         $requestAnalyzer = $this->get('sulu_core.webspace.request_analyzer');
         $locale = $requestAnalyzer->getCurrentLocalization()->getLocalization();
+        $webspaceKey = $requestAnalyzer->getWebspace()->getKey();
 
-        $hits = $searchManager->createSearch($query)->locale($locale)->index('content')->execute();
+        $queryString = '';
+        if (strlen($query) < 3) {
+            $queryString .= '+("' . self::escapeDoubleQuotes($query) . '") ';
+        } else {
+            $queryValues = explode(' ', $query);
+            foreach ($queryValues as $queryValue) {
+                if (strlen($queryValue) > 2) {
+                    $queryString .= '+("' . self::escapeDoubleQuotes($queryValue) . '" OR ' .
+                        preg_replace('/([^\pL\s\d])/u', '?', $queryValue) . '* OR ' .
+                        preg_replace('/([^\pL\s\d])/u', '', $queryValue) . '~) ';
+                } else {
+                    $queryString .= '+("' . self::escapeDoubleQuotes($queryValue) . '") ';
+                }
+            }
+        }
+
+        $hits = $searchManager
+            ->createSearch($queryString . ' +(state:published)')
+            ->locale($locale)
+            ->index('page_' . $webspaceKey)
+            ->execute();
 
         $data = $this->getAttributes(
-            array(
+            [
                 'query' => $query,
-                'hits' => $hits
-            )
+                'hits' => $hits,
+            ]
         );
 
         return $this->render(
             'ClientWebsiteBundle:views:query.html.twig',
             $data
         );
+    }
+
+    private static function escapeDoubleQuotes($query)
+    {
+        return str_replace('"', '\\"', $query);
     }
 }

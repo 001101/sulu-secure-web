@@ -2,8 +2,6 @@
 
 {% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
 
-{% block title %}{{ content.title }}{% endblock %}
-
 {% block content %}
     <div id="content">
         <div class="row" vocab="http://schema.org/" typeof="Content">
@@ -34,7 +32,7 @@
 
                 <h3>Images</h3>
 
-                <div class="row {{ view.images.displayOption }}" property="images" typeof="collection">
+                <div class="row {{ view.images.displayOption|default('') }}" property="images" typeof="collection">
                     {% for image in content.images %}
                         <div class="col-lg-4" rel="images" typeof="images">
                             <img src="{{ image.thumbnails['170x170'] }}" alt="{{ image.name }}"/>
@@ -50,7 +48,7 @@
                     <ul property="links">
                         {% for link in content.links %}
                             <li>
-                                <a href="{% if link.url is defined %}{{ content_path(link.url) }}{% else %}#{% endif %}">{{ link.title|default('No Title') }}</a>
+                                <a href="{% if link.url is defined %}{{ sulu_content_path(link.url, link.webspaceKey) }}{% else %}#{% endif %}">{{ link.title|default('No Title') }}</a>
                             </li>
                         {% endfor %}
                     </ul>
